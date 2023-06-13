@@ -1,0 +1,1 @@
+export const dashboardData=[{frequency:'13',title:'New Orders'},{frequency:'89',title:'Enrolled Certificates'},{frequency:'06',title:'Unverified Domains'},{frequency:'02',title:'Cancelled Orders'}]
