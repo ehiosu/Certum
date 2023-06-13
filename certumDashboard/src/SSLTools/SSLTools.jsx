@@ -12,7 +12,7 @@ export const SSLTools = () => {
         <Header Heading={'SSL Tools'}/>
     <div className="w-full  h-auto  my-4">
     <Tabs   defaultValue='checker' className='w-full    grid grid-cols-4  gap-4 '  orientation='vertical'>
-    <TabsList className="grid w-full grid-cols-1    lg:col-span-1   col-span-2    h-72  shadow-md     bg-white    gap-2   rounded-[0.2rem]    ">
+    <TabsList className="grid w-full grid-cols-1    lg:col-span-1   col-span-3    h-72  shadow-md     bg-white    gap-2   rounded-[0.2rem]    ">
         <TabsTrigger value="checker"  className='col-span-1  data-[state=active]:font-semibold   data-[state=active]:border-b-2  border-blue-400    outline-none    data-[state=inactive]:hover:border-b-2  data-[state=inactive]:hover:border-blue-400/40  transition-all  h-8 data-[state=inactive]:text-neutral-400  data-[state=inactive]:font-normal'>SSL Checker</TabsTrigger>
         <TabsTrigger    className='col-span-1    data-[state=active]:font-semibold   data-[state=active]:border-b-2  border-blue-400    outline-none    data-[state=inactive]:hover:border-b-2  data-[state=inactive]:hover:border-blue-400/40  transition-all  h-8 data-[state=inactive]:text-neutral-400  data-[state=inactive]:font-normal' value="decoder">CSR Decoder</TabsTrigger>
         <TabsTrigger    className='col-span-1    data-[state=active]:font-semibold   data-[state=active]:border-b-2  border-blue-400    outline-none    data-[state=inactive]:hover:border-b-2  data-[state=inactive]:hover:border-blue-400/40  transition-all  h-8 data-[state=inactive]:text-neutral-400  data-[state=inactive]:font-normal' value="cdecoder">Certificate Decoder</TabsTrigger>
@@ -146,11 +146,12 @@ export const SSLTools = () => {
             </div>
        </div>
    </TabsContent>
+   
    <TabsContent    className=' bg-white   lg:col-span-3 col-span-4   shadow-md   h-full  mt-0    rounded-[0.4rem]    p-4'   value='converter'>
 
-    <p  className='text-neutral-400 text-[16px] text-center'>Use this SSL converter to convert SSLs to and from different formats such as pem,der,p7b and pfx.</p>
+    <p  className='text-neutral-400 lg:text-[16px] text-xs text-center'>Use this SSL converter to convert SSLs to and from different formats such as pem,der,p7b and pfx.</p>
 
-    <div className="my-2    flex items-center   gap-2   h-20">
+    <div className="my-2    flex lg:items-center    lg:flex-row flex-col   gap-2   lg:h-20  h-28">
         <p className="font-semibold mt-3">
             Certificate File to Convert:
         </p>
@@ -161,32 +162,89 @@ export const SSLTools = () => {
    
 
     </div>
-    <div className="flex    gap-2 items-center  h-20 my-2">
+    <div className="flex  lg:flex-row  flex-col  gap-2 lg:items-center  h-20 my-2">
     <p className="font-semibold ">
             Type of Certificate to Convert:
         </p>
-        <div className="w-96 border border-black text-neutral-400 p-2 text-[14px] h-10">
+        <div className="lg:w-96 w-full border border-black text-neutral-400 p-2 text-[14px] h-10">
             <p className="font-semibold ">
                 Standard PEM
             </p>
         </div>
     </div>
 
-    <div className="flex    gap-2 items-center  h-20 my-2">
+    <div className="flex    gap-2 lg:items-center  h-20 my-2   lg:flex-row flex-col">
     <p className="font-semibold ">
             Type of Converted Certificate:
         </p>
-        <div className="w-96 border border-black text-neutral-400 p-2 text-[14px] h-10">
+        <div className="lg:w-96 w-full border border-black text-neutral-400 p-2 text-[14px] h-10">
             <p className="font-semibold ">
                 DER/Binary
             </p>
         </div>
     </div>
 
-    <Button className='border border-black text-black   hover:border-white font-normal w-80 hover:shadow-md hover:bg-black hover:text-white my-2 ml-56   '>
+    <Button className='border border-black text-black   hover:border-white font-normal lg:w-80  w-full hover:shadow-md hover:bg-black hover:text-white my-2 lg:ml-56   '>
                Convert Cetificate 
            </Button>
    </TabsContent>
+   <TabsContent    className=' bg-white   lg:col-span-3 col-span-4   shadow-md h-auto  min-h-full  mt-0    rounded-[0.4rem]    p-4'   value='generator'>
+        <div className="w-full  grid h-[60vh] grid-cols-2 p-3 ">
+            <div className="col-span-1  h-full">
+                <div className="flex    items-center    gap-2   justify-center">
+                    <span   className='h-[1px]  w-1/3   bg-gray-400'></span>
+                        <p className="font-semibold text-black">Certificate Details</p>
+                    <span   className='h-[1px]  w-1/3   bg-gray-400'>  </span>
+                </div>  
+
+                <div className="flex    items-center    w-full  h-12   gap-3">
+                    <p className="font-semibold">DNS Names:</p>
+                    <input type="text" name=""  className='flex-1   outline-none  border border-black  p-2  h-7 ' id="" />
+                </div>
+
+                 <div className="flex    items-center    w-full  h-12   gap-3">
+                    <p className="font-semibold">Organization:</p>
+                    <input type="text" name=""  className='flex-1   outline-none  border border-black  p-2  h-7 ' id="" />
+                </div> 
+                 <div className="flex    items-center    w-full  h-12   gap-3">
+                    <p className="font-semibold">Department:</p>
+                    <input type="text" name=""  className='flex-1   outline-none  border border-black  p-2  h-7 ' id="" />
+                </div> 
+
+                 <div className="flex    items-center    w-full  h-12   gap-3">
+                    <p className="font-semibold">City:</p>
+                    <input type="text" name=""  className='flex-1   outline-none  border border-black  p-2  h-7 ' id="" />
+                </div>
+
+                 <div className="flex    items-center    w-full  h-12   gap-3">
+                    <p className="font-semibold">State  / Province:</p>
+                    <input type="text" name=""  className='flex-1   outline-none  border border-black  p-2  h-7 ' id="" />
+                </div>
+
+                 <div className="flex    items-center    w-full  h-12   gap-3">
+                    <p className="font-semibold">Country:</p>
+                    <input type="text" name=""  className='flex-1   outline-none  border border-black  p-2  h-7 ' id="" />
+                </div>
+                 <div className="flex    items-center    w-full  h-12   gap-3">
+                    <p className="font-semibold">Key Size:</p>
+                    <input type="text" name=""  className='flex-1   outline-none  border border-black  p-2  h-7 ' id="" />
+                </div>
+                <Button className='border-[3px] border-gray-400/40 text-black rounded-[0.3rem] font-normal w-48 hover:shadow-md hover:bg-black hover:text-white mx-auto flex    justify-center'>
+               Generate 
+           </Button> 
+
+            </div>
+            <div className="col-span-1">
+                 <div className="flex    items-center    gap-2   justify-center">
+                    <span   className='h-[1px]  w-1/3   bg-gray-400'></span>
+                        <p className="font-semibold text-black">Information </p>
+                    <span   className='h-[1px]  w-1/3   bg-gray-400'>  </span>
+                </div>  
+            </div>
+        </div>
+   </TabsContent>
+
+  
     </Tabs>
     </div>
 
